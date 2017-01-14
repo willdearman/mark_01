@@ -1,8 +1,7 @@
 marketbotio_01:
   build: .
-  command: echo 'ready'
   ports:
-    - '3000:3000'
+    - '3978:3978'
   volumes:
     - .:/home/app/marketbotio_01
     - /home/app/marketbotio_01/node_modules
