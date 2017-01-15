@@ -30,9 +30,10 @@ var FROM = '2014-01-01';
 var TO = '2014-12-31';
 var util = require('util');
 
-session.send("Response is coming");
+
 
 bot.dialog('/', function (session) {
+  session.send("Response is coming");
   googleFinance.historical({
   symbol: SYMBOL,
   from: FROM,
