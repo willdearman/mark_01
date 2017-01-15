@@ -1,4 +1,4 @@
-require('keys-private.js');
+require('keys_private.js');
 var https = require('https'); 
 var restify = require('restify');
 var builder = require('botbuilder');
