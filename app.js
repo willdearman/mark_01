@@ -1,3 +1,4 @@
+var https = require('https'); 
 var restify = require('restify');
 var builder = require('botbuilder');
 var googleFinance = require('google-finance');
@@ -9,7 +10,7 @@ var googleFinance = require('google-finance');
 
 // Setup Restify Server
 var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
+server.listen(process.env.port || process.env.PORT || 4000, function () {
    console.log('%s listening to %s', server.name, server.url); 
 });
   
@@ -25,15 +26,14 @@ server.post('/api/messages', connector.listen());
 // Bots Dialogs
 //=========================================================
 
-var SYMBOL = 'NASDAQ:AAPL';
-var FROM = '2014-01-01';
-var TO = '2014-12-31';
-var util = require('util');
-
-
-
 bot.dialog('/', function (session) {
   session.send("Response is coming");
+
+  // Symbol historical lookup example
+  var SYMBOL = 'NASDAQ:AAPL';
+  var FROM = '2014-01-01';
+  var TO = '2014-12-31';
+  var util = require('util');
   googleFinance.historical({
   symbol: SYMBOL,
   from: FROM,
