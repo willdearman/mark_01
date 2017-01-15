@@ -1,11 +1,15 @@
 {
-  "name": "marketbotio_01",
+  "name": "mark_01",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "dependencies": {
     "botbuilder": "^3.5.3",
-    "restify": "^4.3.0"
+    "colors": "^1.1.2",
+    "google-finance": "^0.1.9",
+    "restify": "^4.3.0",
+    "util": "^0.10.3",
+    "yahoo-finance": "^0.2.16"
   },
   "devDependencies": {},
   "scripts": {
@@ -17,7 +21,7 @@
   },
   "keywords": [],
   "author": "Will Dearman",
-  "license": "No License",
+  "license": "",
   "bugs": {
     "url": "https://github.com/willdearman/marketbot.io_bot_01/issues"
   },

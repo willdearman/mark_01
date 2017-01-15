@@ -1,7 +1,12 @@
 {
-  "name": "marketbotio_01",
+  "name": "mark_01",
   "version": "1.0.0",
   "dependencies": {
+    "addressparser": {
+      "version": "0.1.3",
+      "from": "addressparser@>=0.1.3 <0.2.0",
+      "resolved": "https://registry.npmjs.org/addressparser/-/addressparser-0.1.3.tgz"
+    },
     "ansi-regex": {
       "version": "2.1.1",
       "from": "ansi-regex@>=2.0.0 <3.0.0",
@@ -11,6 +16,11 @@
       "version": "2.2.1",
       "from": "ansi-styles@>=2.2.1 <3.0.0",
       "resolved": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.2.1.tgz"
+    },
+    "array-indexofobject": {
+      "version": "0.0.1",
+      "from": "array-indexofobject@>=0.0.1 <0.1.0",
+      "resolved": "https://registry.npmjs.org/array-indexofobject/-/array-indexofobject-0.0.1.tgz"
     },
     "asap": {
       "version": "2.0.5",
@@ -66,6 +76,28 @@
       "version": "1.0.0",
       "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.0.tgz"
+    },
+    "bl": {
+      "version": "1.1.2",
+      "from": "bl@>=1.1.2 <1.2.0",
+      "resolved": "https://registry.npmjs.org/bl/-/bl-1.1.2.tgz",
+      "dependencies": {
+        "isarray": {
+          "version": "1.0.0",
+          "from": "isarray@>=1.0.0 <1.1.0",
+          "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
+        },
+        "readable-stream": {
+          "version": "2.0.6",
+          "from": "readable-stream@>=2.0.5 <2.1.0",
+          "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.0.6.tgz"
+        }
+      }
+    },
+    "bluebird": {
+      "version": "3.4.1",
+      "from": "bluebird@3.4.1",
+      "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.1.tgz"
     },
     "boom": {
       "version": "2.10.1",
@@ -128,6 +160,11 @@
       "version": "1.2.5",
       "from": "chrono-node@>=1.1.3 <2.0.0",
       "resolved": "https://registry.npmjs.org/chrono-node/-/chrono-node-1.2.5.tgz"
+    },
+    "colors": {
+      "version": "1.1.2",
+      "from": "colors@latest",
+      "resolved": "https://registry.npmjs.org/colors/-/colors-1.1.2.tgz"
     },
     "combined-stream": {
       "version": "1.0.5",
@@ -248,6 +285,18 @@
       "from": "extsprintf@1.0.2",
       "resolved": "https://registry.npmjs.org/extsprintf/-/extsprintf-1.0.2.tgz"
     },
+    "feedparser": {
+      "version": "1.1.4",
+      "from": "feedparser@1.1.4",
+      "resolved": "https://registry.npmjs.org/feedparser/-/feedparser-1.1.4.tgz",
+      "dependencies": {
+        "readable-stream": {
+          "version": "1.0.34",
+          "from": "readable-stream@>=1.0.17 <1.1.0",
+          "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.0.34.tgz"
+        }
+      }
+    },
     "forever-agent": {
       "version": "0.6.1",
       "from": "forever-agent@>=0.6.1 <0.7.0",
@@ -294,6 +343,48 @@
       "version": "6.0.4",
       "from": "glob@>=6.0.1 <7.0.0",
       "resolved": "https://registry.npmjs.org/glob/-/glob-6.0.4.tgz"
+    },
+    "google-finance": {
+      "version": "0.1.9",
+      "from": "google-finance@0.1.9",
+      "resolved": "https://registry.npmjs.org/google-finance/-/google-finance-0.1.9.tgz",
+      "dependencies": {
+        "async": {
+          "version": "2.1.4",
+          "from": "async@>=2.0.1 <3.0.0",
+          "resolved": "https://registry.npmjs.org/async/-/async-2.1.4.tgz"
+        },
+        "debug": {
+          "version": "2.2.0",
+          "from": "debug@2.2.0",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-2.2.0.tgz"
+        },
+        "form-data": {
+          "version": "1.0.1",
+          "from": "form-data@>=1.0.0-rc4 <1.1.0",
+          "resolved": "https://registry.npmjs.org/form-data/-/form-data-1.0.1.tgz"
+        },
+        "moment": {
+          "version": "2.14.1",
+          "from": "moment@2.14.1",
+          "resolved": "https://registry.npmjs.org/moment/-/moment-2.14.1.tgz"
+        },
+        "ms": {
+          "version": "0.7.1",
+          "from": "ms@0.7.1",
+          "resolved": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz"
+        },
+        "qs": {
+          "version": "6.2.1",
+          "from": "qs@>=6.2.0 <6.3.0",
+          "resolved": "https://registry.npmjs.org/qs/-/qs-6.2.1.tgz"
+        },
+        "request": {
+          "version": "2.74.0",
+          "from": "request@2.74.0",
+          "resolved": "https://registry.npmjs.org/request/-/request-2.74.0.tgz"
+        }
+      }
     },
     "graceful-readlink": {
       "version": "1.0.1",
@@ -471,6 +562,11 @@
       "from": "keep-alive-agent@>=0.0.1 <0.0.2",
       "resolved": "https://registry.npmjs.org/keep-alive-agent/-/keep-alive-agent-0.0.1.tgz"
     },
+    "lodash": {
+      "version": "4.15.0",
+      "from": "lodash@4.15.0",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.15.0.tgz"
+    },
     "lodash.once": {
       "version": "4.1.1",
       "from": "lodash.once@>=4.0.0 <5.0.0",
@@ -537,6 +633,11 @@
       "version": "2.17.1",
       "from": "moment@>=2.10.3 <3.0.0",
       "resolved": "https://registry.npmjs.org/moment/-/moment-2.17.1.tgz"
+    },
+    "moment-timezone": {
+      "version": "0.5.11",
+      "from": "moment-timezone@>=0.5.10 <0.6.0",
+      "resolved": "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.11.tgz"
     },
     "ms": {
       "version": "0.7.2",
@@ -660,6 +761,16 @@
         }
       }
     },
+    "request-promise": {
+      "version": "4.1.1",
+      "from": "request-promise@4.1.1",
+      "resolved": "https://registry.npmjs.org/request-promise/-/request-promise-4.1.1.tgz"
+    },
+    "request-promise-core": {
+      "version": "1.1.1",
+      "from": "request-promise-core@1.1.1",
+      "resolved": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.1.tgz"
+    },
     "restify": {
       "version": "4.3.0",
       "from": "restify@>=4.1.1 <5.0.0",
@@ -719,6 +830,11 @@
       "from": "safe-json-stringify@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/safe-json-stringify/-/safe-json-stringify-1.0.3.tgz"
     },
+    "sax": {
+      "version": "0.6.1",
+      "from": "sax@>=0.6.0 <0.7.0",
+      "resolved": "https://registry.npmjs.org/sax/-/sax-0.6.1.tgz"
+    },
     "select-hose": {
       "version": "2.0.0",
       "from": "select-hose@>=2.0.0 <3.0.0",
@@ -773,10 +889,20 @@
         }
       }
     },
+    "stealthy-require": {
+      "version": "1.0.0",
+      "from": "stealthy-require@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.0.0.tgz"
+    },
     "stream-transform": {
       "version": "0.1.1",
       "from": "stream-transform@>=0.1.0 <0.2.0",
       "resolved": "https://registry.npmjs.org/stream-transform/-/stream-transform-0.1.1.tgz"
+    },
+    "string": {
+      "version": "3.3.1",
+      "from": "string@3.3.1",
+      "resolved": "https://registry.npmjs.org/string/-/string-3.3.1.tgz"
     },
     "string_decoder": {
       "version": "0.10.31",
@@ -828,6 +954,18 @@
       "from": "url-join@>=1.1.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/url-join/-/url-join-1.1.0.tgz"
     },
+    "util": {
+      "version": "0.10.3",
+      "from": "util@latest",
+      "resolved": "https://registry.npmjs.org/util/-/util-0.10.3.tgz",
+      "dependencies": {
+        "inherits": {
+          "version": "2.0.1",
+          "from": "inherits@2.0.1",
+          "resolved": "https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz"
+        }
+      }
+    },
     "util-deprecate": {
       "version": "1.0.2",
       "from": "util-deprecate@>=1.0.1 <1.1.0",
@@ -869,6 +1007,28 @@
       "version": "4.0.1",
       "from": "xtend@>=4.0.1 <5.0.0",
       "resolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz"
+    },
+    "yahoo-finance": {
+      "version": "0.2.16",
+      "from": "yahoo-finance@latest",
+      "resolved": "https://registry.npmjs.org/yahoo-finance/-/yahoo-finance-0.2.16.tgz",
+      "dependencies": {
+        "bluebird": {
+          "version": "3.4.7",
+          "from": "bluebird@>=3.4.6 <4.0.0",
+          "resolved": "https://registry.npmjs.org/bluebird/-/bluebird-3.4.7.tgz"
+        },
+        "lodash": {
+          "version": "4.17.4",
+          "from": "lodash@>=4.17.2 <5.0.0",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz"
+        },
+        "string": {
+          "version": "3.3.3",
+          "from": "string@>=3.3.3 <4.0.0",
+          "resolved": "https://registry.npmjs.org/string/-/string-3.3.3.tgz"
+        }
+      }
     },
     "yallist": {
       "version": "2.0.0",
