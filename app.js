@@ -15,8 +15,8 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
   
 // Create chat bot
 var connector = new builder.ChatConnector({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    //appId: process.env.MICROSOFT_APP_ID,
+    //appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
@@ -30,9 +30,10 @@ var FROM = '2014-01-01';
 var TO = '2014-12-31';
 var util = require('util');
 
+session.send("Response is coming");
 
 bot.dialog('/', function (session) {
-    googleFinance.historical({
+  googleFinance.historical({
   symbol: SYMBOL,
   from: FROM,
   to: TO
@@ -43,7 +44,7 @@ bot.dialog('/', function (session) {
     quotes.length
   ).cyan);
   if (quotes[0]) {
-  	session.send('Closing price is %s', JSON.stringify(quotes[0].close, null, 2));
+  	session.sendTyping('Closing price is %s', JSON.stringify(quotes[0].close, null, 2));
     //console.log(
     //  '%s\n...\n%s',
     //  JSON.stringify(quotes[0], null, 2),
@@ -53,8 +54,7 @@ bot.dialog('/', function (session) {
     console.log('N/A');
   }
 });
-    //session.send();
-    session.send("Response is complete");
+
 });
 
 
