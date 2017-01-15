@@ -1,4 +1,0 @@
-image: dockerfile/nginx
-script:
-  - echo hello world
-  - docker-compose up
