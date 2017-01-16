@@ -1,7 +1,7 @@
 mark_01:
   build: .
   ports:
-    - '3978:3978'
+    - '4000:4000'
   volumes:
     - .:/home/app/mark_01
     - /home/app/mark_01/node_modules

@@ -35,42 +35,26 @@ bot.dialog('/', function (session) {
   var FROM = '2014-01-01';
   var TO = '2014-12-31';
   var util = require('util');
+
   googleFinance.historical({
-  symbol: SYMBOL,
-  from: FROM,
-  to: TO
-}).then(function (quotes) {
-  console.log(util.format(
-    '=== %s (%d) ===',
-    SYMBOL,
-    quotes.length
-  ).cyan);
-  if (quotes[0]) {
-  	session.send('Closing price is %s', JSON.stringify(quotes[0].close, null, 2));
-    //console.log(
-    //  '%s\n...\n%s',
-    //  JSON.stringify(quotes[0], null, 2),
-    //  JSON.stringify(quotes[quotes.length - 1], null, 2)
-    //);
-  } else {
-    console.log('N/A');
-  }
-});
-
-        var msg = new builder.Message(session)
-            .textFormat(builder.TextFormat.xml)
-            .attachments([
-                new builder.HeroCard(session)
-                    .title("Hero Card")
-                    .subtitle("Space Needle")
-                    .text("The <b>Space Needle</b> is an observation tower in Seattle, Washington, a landmark of the Pacific Northwest, and an icon of Seattle.")
-                    .images([
-                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
-                    ])
-                    .tap(builder.CardAction.openUrl(session, "https://en.wikipedia.org/wiki/Space_Needle"))
-            ]);
-        session.endDialog(msg);
-
+    symbol: SYMBOL,
+    from: FROM,
+    to: TO
+  }).then(function (quotes) {
+    console.log(util.format(
+      '=== %s (%d) ===',
+      SYMBOL,
+      quotes.length
+    ).cyan);
+    if (quotes[0]) {
+    	var msg = new builder.Message()
+        .text(JSON.stringify(quotes[0].close, null, 2));
+      session.send(msg)
+    } else {
+      console.log('N/A');
+    }
+  });
+session.endConversation("That is all.")
 });
 
 
