@@ -24,13 +24,17 @@ var connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
-var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
+var bot = new builder.UniversalBot(connector, function (session) {
+    session.send("Greetings.");
+    session.beginDialog('/origin');
+});
+
 
 //=========================================================
 // Bots Dialogs
 //=========================================================
-bot.dialog('/', [
+bot.dialog('/origin', [
     function (session) {
         session.send(prompts.welcomeMessage);
         session.beginDialog('/getTickerPrice');
