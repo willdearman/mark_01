@@ -1,4 +1,8 @@
+// Local files required
 require('./keys_private.js');
+var prompts = require('./prompts');
+
+// Node.js requirements
 var https = require('https'); 
 var restify = require('restify');
 var builder = require('botbuilder');
@@ -26,37 +30,38 @@ server.post('/api/messages', connector.listen());
 //=========================================================
 // Bots Dialogs
 //=========================================================
-
-bot.dialog('/', function (session) {
-  session.send("Response is coming");
-
-  // Symbol historical lookup example
-  var SYMBOL = 'NASDAQ:AAPL';
-  var FROM = '2014-01-01';
-  var TO = '2014-12-31';
-  var util = require('util');
-
-  googleFinance.historical({
-    symbol: SYMBOL,
-    from: FROM,
-    to: TO
-  }).then(function (quotes) {
-    console.log(util.format(
-      '=== %s (%d) ===',
-      SYMBOL,
-      quotes.length
-    ).cyan);
-    if (quotes[0]) {
-    	var msg = new builder.Message()
-        .text(JSON.stringify(quotes[0].close, null, 2));
-      session.send(msg)
-    } else {
-      console.log('N/A');
+bot.dialog('/', [
+    function (session) {
+        session.send(prompts.welcomeMessage);
+        session.send("Value is coming");
+        session.beginDialog('/getTickerPrice');
+    },function (session) {
+      console.log(session.privateConversationData['entity1'])
+        session.send("The price is %(close)s for %(symbol)s", session.privateConversationData['entity1']);
+    },function (session) {
+        session.endConversation("Goodbye!");
     }
-  });
-session.endConversation("That is all.")
-});
+]);
 
+//var userCity = session.privateConversationData['entity1']
+// Specialized Dialogs
+
+bot.dialog('/getTickerPrice', [
+    function (session, quotes)  {
+        var SYMBOL = 'NASDAQ:AAPL';
+        var FROM = '2014-01-01';
+        var TO = '2014-12-31';
+        //builder.Prompts.text(session, 'Hi! What is your name?');
+        session.send("Obtaining value");
+        googleFinance.historical({symbol: SYMBOL, from: FROM, to: TO}).then(function (quotes) 
+    {
+          console.log(quotes[0])
+          session.privateConversationData['entity1'] = quotes[0]
+          session.send("I have a value")
+          session.endDialog();
+    })
+  }
+]);
 
 
 
